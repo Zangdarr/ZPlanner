@@ -1,0 +1,31 @@
+Creation of my own planner : ZPlanner
+
+This file presents the features for each versions that will be implemented.
+
+The program is developed in C++, a language I never learned, however I want to dive into it.
+
+
+Version 1 :
+- textual version with a terminal
+- uses of a csv file to store data
+- add task
+- print task
+- task : string with an basic id (an integer) and a status : accomplished or not
+
+remarks : task should by an object descending from  plannerItem
+
+Version 2 :
+- upgrade task : date of publication, due date, string, persons involved
+- remove task
+- modify task
+- archive task
+- print tasks by date
+
+Version 3 :
+- print tasks inside an interval (defaults : today, this week, this months)
+- add/remove/modify/archive/print event descending from plannerItem
+
+Version 4 : 
+- implement a research function
+
+

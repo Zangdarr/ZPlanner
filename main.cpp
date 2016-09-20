@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-
+#include<ctime>
 using namespace std;
 
 void action_selector(std::string);
@@ -11,13 +11,15 @@ void print_task();
 
 int main(){
 
+    std::time_t time_today = std::time(nullptr);
+    std::string str_today = std::asctime(std::localtime(&time_today));
     std::string action;
 
-    std::cout<< "Welcome on your ZPlanner\n";
-    std::cout<< "What action do you want to realize?\n";
-    std::cout<< "1 - print listed task\n";
-    std::cout<< "2 - add a new task\n";
-    std::cout<< "Enter the task id :\n";
+    std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
+             << "What action do you want to realize?\n"
+             << "1 - print listed task\n"
+             << "2 - add a new task\n"
+             << "Enter the task id :\n";
     std::cin>> action;
     std::cin.ignore();
     

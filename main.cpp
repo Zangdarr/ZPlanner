@@ -7,7 +7,12 @@ void action_selector(std::string);
 void add_task(); 
 void print_task();
 
-#define FILENAME "task.csv"
+struct configuration{
+    std::string filename_today;
+    std::string filename_current;
+};
+
+struct configuration s_config {"undefined", "undefined"};
 
 int main(){
 
@@ -17,6 +22,10 @@ int main(){
     std::time_t time_today = std::time(nullptr);
     std::string str_today = std::asctime(std::localtime(&time_today));
     std::strftime(filename_today, sizeof(filename_today), "%m-%d-%y", std::localtime(&time_today));
+    
+    //s_config = (struct configuration)std::malloc(sizeof(s_config));
+    s_config.filename_today.assign(filename_today, 9);  
+    s_config.filename_current.assign(filename_today, 9);  
     
     std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
              << "What action do you want to realize?\n"
@@ -44,7 +53,7 @@ void action_selector(std::string action){
 
 void add_task(){
     std::cout<< "ADD TASK : ";
-    std::ofstream out(FILENAME, std::fstream::app | std::fstream::out | std::fstream::in);
+    std::ofstream out(s_config.filename_today, std::fstream::app | std::fstream::out | std::fstream::in);
     std::string new_task;
 
     std::cin>> new_task;
@@ -58,7 +67,7 @@ void add_task(){
 void print_task(){
     std::cout<< "TODO :\n";
     
-    std::ifstream file(FILENAME);
+    std::ifstream file(s_config.filename_current);
     std::string str_tmp;
 
     while(std::getline(file, str_tmp)){

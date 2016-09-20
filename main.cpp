@@ -1,10 +1,13 @@
 #include<iostream>
+#include<fstream>
 
 using namespace std;
 
 void action_selector(std::string);
 void add_task(); 
 void print_task();
+
+#define FILENAME "task.csv"
 
 int main(){
 
@@ -40,5 +43,14 @@ void add_task(){
 }
 
 void print_task(){
-    std::cout<< "function print_task()";
+    std::cout<< "TODO :\n";
+    
+    std::ifstream file(FILENAME);
+    std::string str_tmp;
+
+    while(std::getline(file, str_tmp)){
+        std::cout<< " - ";
+        std::cout<< str_tmp;
+        std::cout<< '\n';
+    }
 }

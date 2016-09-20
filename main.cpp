@@ -38,7 +38,15 @@ void action_selector(std::string action){
 }
 
 void add_task(){
-    std::cout<< "function add_task()";
+    std::cout<< "ADD TASK : ";
+    std::ofstream out(FILENAME, std::fstream::app | std::fstream::out | std::fstream::in);
+    std::string new_task;
+
+    std::cin>> new_task;
+    out << new_task;
+    out << "\n";
+
+    std::cout<< "Task added.\n";
 
 }
 

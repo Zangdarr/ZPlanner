@@ -11,10 +11,13 @@ void print_task();
 
 int main(){
 
+    std::string action;
+    char filename_today[9];
+
     std::time_t time_today = std::time(nullptr);
     std::string str_today = std::asctime(std::localtime(&time_today));
-    std::string action;
-
+    std::strftime(filename_today, sizeof(filename_today), "%m-%d-%y", std::localtime(&time_today));
+    
     std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
              << "What action do you want to realize?\n"
              << "1 - print listed task\n"

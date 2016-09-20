@@ -1,5 +1,5 @@
 ZPLANNER
 
-current version : do nothing
+next version(2) : daily management of task
 
-next version : ask for the task of the day and show it
+current version(1) : reception interface (command line) & add new task & show task

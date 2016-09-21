@@ -1,5 +1,7 @@
 ZPLANNER
 
-next version(2) : daily management of task
+next version : management of tasks on different days
 
-current version(1) : reception interface (command line) & add new task & show task
+current version : daily management of tasks
+
+version 1 : reception interface (command lines) & add new tasks & show tasks

@@ -15,6 +15,8 @@ struct configuration{
 struct configuration s_config {"undefined", "undefined"};
 
 int main(){
+    //creation of the database folder
+    std::system("[ ! -d database ] && mkdir database");
 
     std::string action;
     char filename_today[9];

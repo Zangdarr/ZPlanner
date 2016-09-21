@@ -23,7 +23,6 @@ int main(){
     std::string str_today = std::asctime(std::localtime(&time_today));
     std::strftime(filename_today, sizeof(filename_today), "%m-%d-%y", std::localtime(&time_today));
     
-    //s_config = (struct configuration)std::malloc(sizeof(s_config));
     s_config.filename_today.assign(filename_today, 9);  
     s_config.filename_current.assign(filename_today, 9);  
     

@@ -55,7 +55,7 @@ void add_task(){
     std::ofstream out(s_config.filename_today, std::fstream::app | std::fstream::out | std::fstream::in);
     std::string new_task;
 
-    std::cin>> new_task;
+    std::getline(std::cin, new_task);
     out << new_task;
     out << "\n";
 

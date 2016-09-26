@@ -54,10 +54,19 @@ void action_selector(std::string action){
 
 void add_task(){
     std::cout<< "ADD TASK : ";
-    std::ofstream out(s_config.filename_today, std::fstream::app | std::fstream::out | std::fstream::in);
     std::string new_task;
+    std::getline(std::cin, new_task); //get the task from the user
 
-    std::getline(std::cin, new_task);
+    std::string today_year = s_config.filename_today.substr(6,2);
+    std::string today_month = s_config.filename_today.substr(0,2);
+    std::string today_folder = "database/20" + today_year + "_" + today_month; // determine the folder of the day
+
+    std::string command_line = "[ ! -d " + today_folder + " ] && mkdir " + today_folder; 
+    std::system(command_line.c_str()); // creation of the folder if needed
+    
+    std::string today_path = today_folder + "/" + s_config.filename_today; //
+
+    std::ofstream out(today_path, std::fstream::app | std::fstream::out | std::fstream::in);
     out << new_task;
     out << "\n";
 

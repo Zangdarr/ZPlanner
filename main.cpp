@@ -29,7 +29,7 @@ int main(){
     s_config.filename_current.assign(filename_today, 9);  
     
     std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
-             << "What action do you want to realize?\n"
+             << "What action do you want to realize on "<< s_config.filename_current << " ?\n"
              << "1 - print listed task\n"
              << "2 - add a new task\n"
              << "Enter the task id :\n";

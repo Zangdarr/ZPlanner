@@ -32,6 +32,7 @@ int main(){
              << "What action do you want to realize on "<< s_config.filename_current << " ?\n"
              << "1 - print listed task\n"
              << "2 - add a new task\n"
+             << "3 - modify the current date\n"
              << "Enter the task id :\n";
     std::cin>> action;
     std::cin.ignore();

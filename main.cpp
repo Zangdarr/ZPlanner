@@ -1,6 +1,10 @@
 #include<iostream>
 #include<fstream>
 #include<ctime>
+#include<cstring>
+
+#include<typeinfo>
+
 using namespace std;
 
 void action_selector(std::string);

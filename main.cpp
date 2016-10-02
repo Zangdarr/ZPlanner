@@ -10,6 +10,7 @@ using namespace std;
 void action_selector(std::string);
 void add_task(); 
 void print_task();
+void modify_current_date();
 
 struct configuration{
     std::string filename_today;
@@ -51,6 +52,8 @@ void action_selector(std::string action){
         case 1: { print_task();
                     break;}
         case 2: { add_task();
+                    break;}
+        case 3: { modify_current_date();
                     break;}
         default:  std::cout<< "Unaffected id entered.";
                   break;

@@ -33,6 +33,7 @@ int main(){
     s_config.filename_today.assign(filename_today, 9);  
     s_config.filename_current.assign(filename_today, 9);  
     
+    while(1){
     std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
              << "What action do you want to realize on "<< s_config.filename_current << " ?\n"
              << "1 - print listed task\n"
@@ -45,6 +46,8 @@ int main(){
     action_selector(action);
     
     std::cin.get();
+
+    }
 }
 
 void action_selector(std::string action){

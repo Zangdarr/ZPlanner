@@ -60,6 +60,39 @@ void action_selector(std::string action){
     }
 }
 
+void modify_current_date(){
+    std::string new_date;
+    bool b_structure, b_mm, b_dd; 
+    int tmp;
+
+    do{
+        std::cout<< "Enter a date(mm-dd-yy) : ";
+        std::getline(std::cin, new_date );
+
+        b_structure = new_date[2] == new_date[5] and new_date[5] == '-' and new_date.length() == 8;
+        if(not b_structure){
+            std::cout<< "Error in format. Please respect the format given." << std::endl << std::endl ;
+            continue;}
+
+        tmp = std::stoi(new_date.substr(0,2));
+        b_mm =  0 < tmp and tmp <= 12;
+        if(not b_mm){
+            std::cout<< "Error. The month provided isn't correct." << std::endl << std::endl ;
+            continue;}
+
+        tmp = std::stoi(new_date.substr(3,2));
+        b_dd = 0 < tmp and tmp <= 31;
+        if(not b_dd){
+            std::cout<< "Error. The day provided isn't correct." << std::endl << std::endl ;
+            continue;}
+        
+        break;
+    } while(1);
+
+    s_config.filename_current = new_date;  
+
+}
+
 void add_task(){
     std::cout<< "ADD TASK : ";
     std::string new_task;

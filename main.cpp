@@ -33,10 +33,11 @@ int main(){
     s_config.filename_today.assign(filename_today, 9);  
     s_config.filename_current.assign(filename_today, 9);  
     
+    std::cout<< "Welcome on your ZPlanner" << std::endl
+             << "Today we are " << str_today << std::endl;
+
     while(1){
-        std::cout<< "Welcome on your ZPlanner" << std::endl
-                 << "Today we are " << str_today << std::endl
-                 << "What action do you want to realize on "<< s_config.filename_current << " ?" << std::endl
+        std::cout<< "What action do you want to realize on "<< s_config.filename_current << " ?" << std::endl
                  << "1 - print listed task" << std::endl
                  << "2 - add a new task" << std::endl
                  << "3 - modify the current date" << std::endl
@@ -46,7 +47,7 @@ int main(){
         std::cin.ignore();
         
         if(not (action == "1" or action == "2" or action == "3")){
-            std::cout<< "Non attributed action." << std::endl;
+            std::cout<< "Non attributed action." << std::endl << std::endl;
             continue;
         }
 

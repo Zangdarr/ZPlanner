@@ -44,6 +44,11 @@ int main(){
 
         std::cin>> action;
         std::cin.ignore();
+        
+        if(not (action == "1" or action == "2" or action == "3")){
+            std::cout<< "Non attributed action." << std::endl;
+            continue;
+        }
 
         action_selector(action);
     

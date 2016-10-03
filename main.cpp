@@ -34,18 +34,20 @@ int main(){
     s_config.filename_current.assign(filename_today, 9);  
     
     while(1){
-    std::cout<< "Welcome on your ZPlanner\nToday we are " << str_today << "\n"
-             << "What action do you want to realize on "<< s_config.filename_current << " ?\n"
-             << "1 - print listed task\n"
-             << "2 - add a new task\n"
-             << "3 - modify the current date\n"
-             << "Enter the task id :\n";
-    std::cin>> action;
-    std::cin.ignore();
+        std::cout<< "Welcome on your ZPlanner" << std::endl
+                 << "Today we are " << str_today << std::endl
+                 << "What action do you want to realize on "<< s_config.filename_current << " ?" << std::endl
+                 << "1 - print listed task" << std::endl
+                 << "2 - add a new task" << std::endl
+                 << "3 - modify the current date" << std::endl
+                 << "Enter the task id :" << std::endl;
+
+        std::cin>> action;
+        std::cin.ignore();
+
+        action_selector(action);
     
-    action_selector(action);
-    
-    std::cin.get();
+        std::cin.get();
 
     }
 }

@@ -1,9 +1,22 @@
 ZPLANNER
 
-next version : management of tasks on different days
 
 
-current version : a "database" of task files is implemented.
+
+
+next version : implementation of weekly and monthly TODO list
+
+
+
+
+
+current version : management of tasks on different days
+
+
+
+
+
+version 3 : a "database" of task files is implemented.
 
 version 2 : daily management of tasks
 

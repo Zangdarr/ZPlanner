@@ -149,3 +149,24 @@ void print_task(){
         std::cout<< '\n';
     }
 }
+
+
+std::string get_path2file(bool is_transversal){
+    std::string path2file;
+
+    if(is_transversal){
+        path2file = "database/" + s_config.filename_transversal;
+    }
+    else{
+        std::string current_year = s_config.filename_current.substr(6,2);
+        std::string current_month = s_config.filename_current.substr(0,2);
+        std::string current_folder = "database/20" + current_year + "_" + current_month; // determine the current folder
+
+        std::string command_line = "[ ! -d " + current_folder + " ] && mkdir " + current_folder; 
+        std::system(command_line.c_str()); // creation of the folder if needed
+    
+        path2file = current_folder + "/" + s_config.filename_current; //
+    }
+
+    return path2file;
+}

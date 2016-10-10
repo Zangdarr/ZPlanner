@@ -125,22 +125,31 @@ void add_task(std::string path2file){
 }
 
 void print_task(){
-    std::cout<< "TODO :\n";
+    std::cout<< "CURRENT TASKS :\n";
     
-    std::string current_year = s_config.filename_current.substr(6,2);
-    std::string current_month = s_config.filename_current.substr(0,2);
-    std::string current_folder = "database/20" + current_year + "_" + current_month; // determine the folder of the day
-
-    std::string current_path = current_folder + "/" + s_config.filename_current; //
-
-    std::ifstream file(current_path);
+    std::ifstream current_file( get_path2file(false) );
     std::string str_tmp;
 
-    while(std::getline(file, str_tmp)){
+    while(std::getline(current_file, str_tmp)){
         std::cout<< " - ";
         std::cout<< str_tmp;
         std::cout<< '\n';
     }
+
+    current_file.close();
+
+    std::cout<< std::endl
+             << "TRANSVERSAL TASKS :" << std::endl;
+
+    std::ifstream transversal_file( get_path2file(true) );
+
+    while(std::getline(transversal_file, str_tmp)){
+        std::cout<< " - "
+                 << str_tmp
+                 << std::endl;
+    }
+
+    transversal_file.close();
 }
 
 

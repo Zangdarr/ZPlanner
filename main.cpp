@@ -11,6 +11,7 @@ void action_selector(std::string);
 void add_task(); 
 void print_task();
 void modify_current_date();
+std::string get_path2file(bool);
 
 struct configuration{
     std::string filename_today;

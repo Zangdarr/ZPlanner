@@ -8,7 +8,7 @@
 using namespace std;
 
 void action_selector(std::string);
-void add_task(); 
+void add_task(std::string); 
 void print_task();
 void modify_current_date();
 std::string get_path2file(bool);
@@ -67,9 +67,11 @@ void action_selector(std::string action){
     switch(std::stoi(action)){
         case 1: { print_task();
                     break;}
-        case 2: { add_task();
+        case 2: { add_task( get_path2file(false) );
                     break;}
-        case 3: { modify_current_date();
+        case 3: { add_task( get_path2file(true) );
+                    break;}
+        case 4: { modify_current_date();
                     break;}
         default:  std::cout<< "Unaffected id entered.";
                   break;
@@ -109,21 +111,12 @@ void modify_current_date(){
 
 }
 
-void add_task(){
+void add_task(std::string path2file){
     std::cout<< "ADD TASK : ";
     std::string new_task;
     std::getline(std::cin, new_task); //get the task from the user
 
-    std::string current_year = s_config.filename_current.substr(6,2);
-    std::string current_month = s_config.filename_current.substr(0,2);
-    std::string current_folder = "database/20" + current_year + "_" + current_month; // determine the current folder
-
-    std::string command_line = "[ ! -d " + current_folder + " ] && mkdir " + current_folder; 
-    std::system(command_line.c_str()); // creation of the folder if needed
-    
-    std::string current_path = current_folder + "/" + s_config.filename_current; //
-
-    std::ofstream out(current_path, std::fstream::app | std::fstream::out | std::fstream::in);
+    std::ofstream out(path2file, std::fstream::app | std::fstream::out | std::fstream::in);
     out << new_task;
     out << "\n";
 

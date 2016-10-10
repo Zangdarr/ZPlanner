@@ -23,6 +23,8 @@ struct configuration s_config {"undefined", "undefined", "task_transversal"};
 int main(){
     //creation of the database folder
     std::system("[ ! -d database ] && mkdir database");
+    //creation of the transversal tasks file
+    std::system(("touch " + s_config.filename_transversal).c_str());
 
     std::string action;
     char filename_today[9];

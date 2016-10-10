@@ -43,13 +43,14 @@ int main(){
         std::cout<< "What action do you want to realize on "<< s_config.filename_current << " ?" << std::endl
                  << "1 - print listed task" << std::endl
                  << "2 - add a new task" << std::endl
-                 << "3 - modify the current date" << std::endl
+                 << "3 - add a transversal task" << std::endl
+                 << "4 - modify the current date" << std::endl
                  << "Enter the task id :" << std::endl;
 
         std::cin>> action;
         std::cin.ignore();
         
-        if(not (action == "1" or action == "2" or action == "3")){
+        if(not (action == "1" or action == "2" or action == "3" or action == "4")){
             std::cout<< "Non attributed action." << std::endl << std::endl;
             continue;
         }

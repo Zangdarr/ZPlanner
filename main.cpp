@@ -15,9 +15,10 @@ void modify_current_date();
 struct configuration{
     std::string filename_today;
     std::string filename_current;
+    std::string filename_transversal;
 };
 
-struct configuration s_config {"undefined", "undefined"};
+struct configuration s_config {"undefined", "undefined", "task_transversal"};
 
 int main(){
     //creation of the database folder

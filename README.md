@@ -4,7 +4,7 @@ ZPLANNER
 
 
 
-next version : implementation of weekly and monthly TODO list
+next version : implementation of a transversal TODO list
 
 
 
